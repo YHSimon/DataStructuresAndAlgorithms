@@ -14,4 +14,22 @@ public class Main {
         }
         return temp;
     }
+
+    public int Fibonacci(int n) {
+        if (n == 0) {
+            return 0;
+        }else if(n==1||n==2){
+            return 1;
+        }
+        int[] a=new int[2];
+        a[0]=1;
+        a[1]=1;
+        int res=0;
+        for(int i=3;i<=n;i++){
+            res=a[0]+a[1];
+            a[0]=a[1];
+            a[1]=res;
+        }
+        return  res;
+    }
 }
