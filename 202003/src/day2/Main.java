@@ -3,9 +3,27 @@ package day2;
 public class Main {
     public static void main(String[] args) {
         Main m=new Main();
+        System.out.println(m.NumberOf1(1));
 //        System.out.println(m.JumpFloor(5));
+//        System.out.println(m.JumpFloorII(5));
+    }
 
-        System.out.println(m.JumpFloorII(5));
+    /**
+     * 输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。
+     * @param n
+     * @return
+     */
+    public int NumberOf1(int n) {
+        int num=0;
+        String s = Integer.toBinaryString(n);
+        System.out.println(s);
+        int length = s.length();
+        for(int i = 0; i<length;i++){
+            if("1".equals(s.substring(i,i+1))){
+                num++;
+            }
+        }
+        return num;
     }
 
     /**
