@@ -23,6 +23,39 @@ public class Test {
 
     /**
      * 输入一个链表，反转链表后，输出新链表的表头
+     *
+     * 1->2->3->4
+     *
+     * 1.
+     *      head=1
+     *      next=2->3->4
+     *      head.next=pre
+     *      pre=1->null
+     *
+     *      null<-1  2->3->4
+     *
+     * 2.
+     *      head=2->3->4
+     *      next=3->4
+     *      head.next=pre  2.next=  1->null
+     *      pre=head     2->1->null
+     *
+     *      null<-1<-2  3->4
+     *
+     * 3.   head=3->4
+     *      next=4
+     *      head.next=pre 3.next= 2->1->null
+     *      pre=head    3->2->1->null
+     *
+     *      null<-1<-2<-3   4
+     *
+     * 4.   head=4
+     *      next=null
+     *      head.next=pre  4.next=  3->2->1->null
+     *      pre=head        4->3->2->1->null
+     *      head=next=null
+     *
+     *
      */
     public ListNode ReverseList(ListNode head) {
         if(head==null){
@@ -38,6 +71,22 @@ public class Test {
         }
         return pre;
     }
+
+    /**    反转单链表
+    public ListNode ReverseList2(ListNode head){
+        if(head==null){
+            return  null;
+        }
+        ListNode pre=null;
+        ListNode next=null;
+        while(head!=null){
+            next=head.next;
+            head.next=pre;
+            pre=head;
+            head=next;
+        }
+        return pre;
+    }*/
 
     /**
      * 输入一个链表，输出该链表中倒数第k个结点。
