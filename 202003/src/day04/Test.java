@@ -1,8 +1,6 @@
 package day04;
 
 
-import java.util.List;
-
 public class Test {
 
     public static void main(String[] args) {
@@ -26,7 +24,7 @@ public class Test {
     public ListNode Merge2(ListNode list1,ListNode list2) {
         ListNode head=new ListNode(-1);
         head.next=null;
-        ListNode root=head;
+        ListNode root=head;   //head一直变化 且每个节点
         while(list1!=null&&list2!=null){
             if(list1.val<list2.val){
                 head.next=list1;
