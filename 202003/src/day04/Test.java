@@ -24,7 +24,7 @@ public class Test {
     public ListNode Merge2(ListNode list1,ListNode list2) {
         ListNode head=new ListNode(-1);
         head.next=null;
-        ListNode root=head;   //head一直变化 且每个节点
+        ListNode root=head;   //head一直随着合并而变化 且每个节点的ListNode@ID是固定的
         while(list1!=null&&list2!=null){
             if(list1.val<list2.val){
                 head.next=list1;
