@@ -20,6 +20,8 @@ public class Test {
         Test t=new Test();
         t.Convert(root);
         System.out.println(t.Sum_Solution(5));
+
+        t.Permutation2("abbc");
     }
 
     /**
@@ -35,8 +37,12 @@ public class Test {
      * 方法二  递归
      * 输入一个字符串,按字典序打印出该字符串中字符的所有排列。例如输入字符串abc,
      * 则打印出由字符a,b,c所能排列出来的所有字符串abc,acb,bac,bca,cab和cba。
+     *
+     * 固定第一个字符，递归取得首位后面的各种字符串组合；
+     * 再把第一个字符与后面每一个字符交换，并同样递归获得首位后面的字符串组合；
+     * 递归的出口，就是只剩一个字符的时候，递归的循环过程，就是从每个子串的第二个字符开始依次与第一个字符交换，然后继续处理子串。
      */
-    public ArrayList<String> Permutation(String str){
+    public ArrayList<String> Permutation2(String str){
         ArrayList<String> list=new ArrayList<>();
         if(str==null||str.length()==0) return list;
         PermutationHelper(str.toCharArray(),0,list);
@@ -50,6 +56,7 @@ public class Test {
         }else{
             Set<Character> set=new HashSet<>();
             for(int j=i,len=chars.length;j<len;j++){
+                //固定第一个字符，递归取得收尾后面的各种字符串的组合
                 if(j==i||!set.contains(chars[j])){
                     set.add(chars[j]);
                     swap(chars, i, j);
@@ -66,7 +73,7 @@ public class Test {
      * 输入一个字符串,按字典序打印出该字符串中字符的所有排列。例如输入字符串abc,
      * 则打印出由字符a,b,c所能排列出来的所有字符串abc,acb,bac,bca,cab和cba。
      */
-    public ArrayList<String> Permutation2(String str) {
+    public ArrayList<String> Permutation1(String str) {
         ArrayList<String> list=new ArrayList<>();
         if(str==null||str.length()==0) return list;
         char[] chars = str.toCharArray();
