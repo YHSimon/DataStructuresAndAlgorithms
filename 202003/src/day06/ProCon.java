@@ -5,18 +5,18 @@ package day06;
  */
 public class ProCon {
     public static void main(String[] args) {
-        Data data=new Data();
-        new Thread(()->{
-            for(int i=0;i<30;i++){
+        Data data = new Data();
+        new Thread(() -> {
+            for (int i = 0; i < 30; i++) {
                 data.increase();
             }
-        },"A").start();
+        }, "A").start();
 
-        new Thread(()->{
+        new Thread(() -> {
             for (int i = 0; i < 30; i++) {
                 data.decrease();
             }
-        },"B").start();
+        }, "B").start();
     }
 }
 
@@ -49,7 +49,7 @@ class Data {
         }
         num--;
         this.notify();
-        System.out.println(Thread.currentThread().getName()+"-->"+num);
+        System.out.println(Thread.currentThread().getName() + "-->" + num);
     }
 }
 

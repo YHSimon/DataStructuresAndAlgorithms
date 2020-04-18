@@ -8,8 +8,8 @@ import java.util.Stack;
  */
 public class Test {
 
-   Stack<Integer> stack1 =new Stack<>();
-   Stack<Integer> stack2 =new Stack<>();
+    Stack<Integer> stack1 = new Stack<>();
+    Stack<Integer> stack2 = new Stack<>();
 
     public void push(int node) {
         stack1.push(node);
@@ -25,15 +25,15 @@ public class Test {
 
     //返回最小的  只是寻找 不是出栈
     public int min() {
-        int min=Integer.MAX_VALUE;
-        while(stack1.size()>0){
-            int temp=stack1.pop();
-            if(temp<min){
-                min=temp;
+        int min = Integer.MAX_VALUE;
+        while (stack1.size() > 0) {
+            int temp = stack1.pop();
+            if (temp < min) {
+                min = temp;
             }
             stack2.push(temp);
         }
-        while(stack2.size()>0){
+        while (stack2.size() > 0) {
             stack1.push(stack2.pop());
         }
         return min;

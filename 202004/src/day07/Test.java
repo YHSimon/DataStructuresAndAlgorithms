@@ -6,7 +6,7 @@ import java.util.Collections;
 
 public class Test {
     public static void main(String[] args) {
-        System.out.println(5^7);
+        System.out.println(5 ^ 7);
 
 //        Test t=new Test();
 //        t.NumberOf1Between1AndN_Solution(55);
@@ -23,15 +23,15 @@ public class Test {
     }
 
     /**
-     *方法二
+     * 方法二
      * 从个 十 百  ...依次讨论
      * 整数中1出现的次数（从1到n整数中1出现的次数）
      */
     public int NumberOf1Between1AndN_Solution2(int n) {
-        if(n <= 0)
+        if (n <= 0)
             return 0;
         int count = 0;
-        for(long i = 1; i <= n; i *= 10){
+        for (long i = 1; i <= n; i *= 10) {
             long diviver = i * 10;
             count += (n / diviver) * i + Math.min(Math.max(n % diviver - i + 1, 0), i);
         }
@@ -41,15 +41,14 @@ public class Test {
     /**
      * 方法一  暴力求解
      * 整数中1出现的次数（从1到n整数中1出现的次数）
-     *
      */
     public int NumberOf1Between1AndN_Solution(int n) {
-        int count=0;
-        while(n>0){
-            String str=String.valueOf(n);
+        int count = 0;
+        while (n > 0) {
+            String str = String.valueOf(n);
             char[] chars = str.toCharArray();
-            for(int i=0;i<chars.length;i++){
-                if(chars[i]=='1'){
+            for (int i = 0; i < chars.length; i++) {
+                if (chars[i] == '1') {
                     count++;
                 }
             }
@@ -71,20 +70,20 @@ public class Test {
     /**
      * 输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4,。
      */
-    public ArrayList<Integer> GetLeastNumbers_Solution(int [] input, int k) {
-        ArrayList<Integer> list=new ArrayList<>();
-        ArrayList<Integer> res=new ArrayList<>();
-        if(input==null||input.length==0){
+    public ArrayList<Integer> GetLeastNumbers_Solution(int[] input, int k) {
+        ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> res = new ArrayList<>();
+        if (input == null || input.length == 0) {
             return res;
         }
-        for(int i=0,len=input.length;i<len;i++){
+        for (int i = 0, len = input.length; i < len; i++) {
             list.add(input[i]);
         }
         Collections.sort(list);
-        if(k>list.size()){
-           return res;
+        if (k > list.size()) {
+            return res;
         }
-        for(int i=0;i<k;i++){
+        for (int i = 0; i < k; i++) {
             res.add(list.get(i));
         }
         return res;
