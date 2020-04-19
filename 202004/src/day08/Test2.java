@@ -14,38 +14,68 @@ public class Test2 {
 //        System.out.println(t.minStartValue(nums));
     }
 
-    static List<String> res = new ArrayList<>();
-
-    public String getHappyString(int n, int k) {
-        char[] r = {'a', 'b', 'c'};
-        Queue<Character> queue = new LinkedList<>();
-        for (int i = 0; i <= 2; i++) {
-            queue.add(r[i]);
-            bfs(queue, r, n);
+    public String getHappyString(int n,int k){
+        List<String> res=new ArrayList<>();
+        backtracking("a", n-1, res);
+        backtracking("b", n-1, res);
+        backtracking("c", n-1, res);
+        if(res.size()<k){
+            return "";
         }
         Collections.sort(res);
-        System.out.println(res);
-        return "";
+        return res.get(k-1);
     }
 
-    private static void bfs(Queue<Character> queue, char[] r, int n) {
-        List<Character> list = new ArrayList<>();
-        while (list.size()<n) {
-            Character temp = queue.poll();
-            int index = 0;
-            list.add(temp);
-            for (int i = 0; i <= 2&&list.size()<=n; i++) {
-                if (r[i] == list.get(index)) {
-                    continue;
-                }
-                list.add(r[i]);
-                index++;
-                queue.add(r[i]);
-            }
-            res.add(list.toString());
-            list.clear();
+    public void backtracking(String s,int k,List<String> res){
+        if(k<0||(s.length()>1&&s.charAt(s.length()-1)==s.charAt(s.length()-2))){
+            return;
         }
+        if(k==0){
+            res.add(s);
+            return;
+        }
+         backtracking(s+'a', k-1, res);
+         backtracking(s+'b', k-1, res);
+         backtracking(s+'c', k-1, res);
+
     }
+
+
+    /**
+     *
+           static List<String> res = new ArrayList<>();
+
+           public String getHappyString(int n, int k) {
+              char[] r = {'a', 'b', 'c'};
+              Queue<Character> queue = new LinkedList<>();
+              for (int i = 0; i <= 2; i++) {
+                  queue.add(r[i]);
+                  bfs(queue, r, n);
+              }
+              Collections.sort(res);
+              System.out.println(res);
+              return "";
+          }
+
+          private static void bfs(Queue<Character> queue, char[] r, int n) {
+              List<Character> list = new ArrayList<>();
+              while (list.size()<n) {
+                  Character temp = queue.poll();
+                  int index = 0;
+                  list.add(temp);
+                  for (int i = 0; i <= 2&&list.size()<=n; i++) {
+                      if (r[i] == list.get(index)) {
+                          continue;
+                      }
+                      list.add(r[i]);
+                      index++;
+                      queue.add(r[i]);
+                  }
+                  res.add(list.toString());
+                  list.clear();
+              }
+          }
+     */
 
     public int findMinFibonacciNumbers(int k) {
         List<Integer> list = new ArrayList<>();
