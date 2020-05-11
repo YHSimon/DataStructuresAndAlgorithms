@@ -40,7 +40,7 @@ public class Test2 {
             // 将贡献不断地平方
             x_contribute *= x_contribute;
             // 舍弃 N 二进制表示的最低位，这样我们每次只要判断最低位即可
-            N /= 2;
+            N /=  2;
         }
         return ans;
     }

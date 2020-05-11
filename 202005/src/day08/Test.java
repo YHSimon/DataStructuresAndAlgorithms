@@ -28,7 +28,7 @@ public class Test {
     /**
      * 时间 O(n)
      * 空间 O(1)
-     * 快速幂  迭代
+     * 快速幂   迭代
      */
 //    public double quickMul(double x,long N){
 //        double ans=1.0;
