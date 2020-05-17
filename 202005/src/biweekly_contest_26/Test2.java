@@ -27,7 +27,7 @@ public class Test2 {
         return list;
     }
 
-    //辗转相除计算最大公约树
+    //辗转相除计算最大公约数
     public int gcd(int a,int b){
         return b==0?a:gcd(b,a%b);
     }
