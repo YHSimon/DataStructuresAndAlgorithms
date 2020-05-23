@@ -3,7 +3,7 @@ package day17;
 public class Practice {
     public static void main(String[] args) {
         Practice p=new Practice();
-        System.out.println(p.minwindow("ABC", "ABC"));
+        System.out.println(p.minwindow("ABC", "ABC") );
     }
     public String minwindow(String s,String t){
         if(s==null||t==null||s.length()==0||t.length()==0||s.length()<t.length()) return "";
