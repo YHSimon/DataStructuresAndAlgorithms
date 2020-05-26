@@ -31,10 +31,10 @@ public class LRUCache {
         lruCache.put(4, 1);
         System.out.println(lruCache.get(2));
     }
-
+    //不能定义为静态变量
     int capacity;
-    static List<Integer> record=new ArrayList<>();
-    static Map<Integer,Integer> cache=new HashMap<>();
+    List<Integer> record=new ArrayList<>();
+    Map<Integer,Integer> cache=new HashMap<>();
     public LRUCache(int capacity) {
         this.capacity=capacity;
     }
