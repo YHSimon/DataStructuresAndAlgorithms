@@ -11,6 +11,7 @@ public class Codec {
         TreeNode n3=new TreeNode(3);
         TreeNode n4=new TreeNode(4);
         TreeNode n5=new TreeNode(5);
+
     }
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
