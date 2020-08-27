@@ -25,10 +25,12 @@ public class Solution {
             tmp+=nums[i];
             list.add(nums[i]);
 
+
             // if(tmp>sum-nums[i]){
             //     return list;
             // }
             // sum-=nums[i];
+
 
             //优化
             if(tmp>sum/2){
