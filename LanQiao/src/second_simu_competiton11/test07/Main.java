@@ -1,5 +1,9 @@
 package second_simu_competiton11.test07;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
  * 问题描述
  *
@@ -47,6 +51,32 @@ package second_simu_competiton11.test07;
  * 　　对于 80% 的评测用例，1 <= n, m <= 100；
  * 　　对于所有评测用例，1 <= n, m <= 1000。
  */
-public class Main {
 
+//动态规划
+public class Main {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int m=in.nextInt(),n=in.nextInt();
+        in.close();
+        int[][] dp=new int[m+2][n+2];
+
+        for(int i=1;i<=n;i++){
+            dp[1][i]=n-i+1;
+        }
+
+        for(int i=2;i<=n;i++){
+            if(i%2==1){
+                for(int j=n;j>=1;j--){
+                    dp[i][j]=(dp[i-1][j-1]+dp[i][j+1])%10000;
+                }
+            }else{
+                for(int j=1;j<=n;j++){
+                    dp[i][j]=(dp[i-1][j+1]+dp[i][j-1])%10000;
+                }
+            }
+        }
+
+        int result=(m&1)==1? dp[m][1]:dp[m][n];
+        System.out.println(result);
+    }
 }
