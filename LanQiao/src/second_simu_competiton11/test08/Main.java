@@ -39,7 +39,6 @@ package second_simu_competiton11.test08;
  * 　　对于所有评测用例，1 <= n <= 1000，0 <= x, y, h <= 10000。
  */
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
