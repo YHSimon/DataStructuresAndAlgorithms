@@ -1,7 +1,5 @@
-package second_simu_competiton11.test07;
+package second_simu_competiton.test07;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**

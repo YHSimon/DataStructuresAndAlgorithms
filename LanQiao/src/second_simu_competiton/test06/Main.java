@@ -1,4 +1,4 @@
-package second_simu_competiton11.test06;
+package second_simu_competiton.test06;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package second_simu_competiton11.test04;
+package second_simu_competiton.test04;
 
 /**
  * 问题描述】
