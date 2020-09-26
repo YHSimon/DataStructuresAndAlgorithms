@@ -1,5 +1,6 @@
 package first_simu_competition.test05;
 
+
 /**
  * 问题描述
  * 　　一个正整数如果任何一个数位不大于右边相邻的数位，则称为一个数位递增的数，例如1135是一个数位递增的数，而1024不是一个数位递增的数。
@@ -19,6 +20,26 @@ package first_simu_competition.test05;
  */
 public class Main {
     public static void main(String[] args) {
-
+//        Scanner in=new Scanner(System.in);
+        int n=100;
+//        in.close();
+        int ans=0;
+        for(int i=1;i<=n;i++){
+            int tmp=i,pre=tmp%10;
+            boolean flag=true;
+            tmp/=10;
+            while(tmp>0){
+                if(pre<(tmp%10)){
+                    flag=false;
+                    break;
+                }
+                pre=tmp%10;
+                tmp/=10;
+            }
+            if(flag){
+                ans++;
+            }
+        }
+        System.out.println(ans);
     }
 }
