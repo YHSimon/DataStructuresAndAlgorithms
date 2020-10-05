@@ -25,7 +25,7 @@ public class Main {
         int count=0;
         int j=0,sum;
         while(true){
-            if(n<600&&j%2==0){//若最后是在跑步 且体力小于600 分开计算
+            if(n<600&&j%2==0){ //若最后是在跑步 且体力小于600 分开计算
                 sum=n/10;
                 break;
             }
