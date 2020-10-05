@@ -27,9 +27,9 @@ import java.util.Scanner;
  *
  * 【样例输出】
  * gggg.
- * gggg.
  * ggggg
- * .ggg.
+ * .gggg
+ * ..ggg
  *
  * 【评测用例规模与约定】
  * 对于 30% 的评测用例，2 <= n, m <= 20。
@@ -37,12 +37,13 @@ import java.util.Scanner;
  * 对于所有评测用例，2 <= n, m <= 1000，1 <= k <= 1000。
  */
 public class Main {
+    //记录是否被访问过
     static int[][] vis;
     public static void main(String[] args) {
         Scanner in=new Scanner(System.in);
         int m=in.nextInt();
         int n=in.nextInt();
-        in.nextLine();
+        in.nextLine();//不要漏掉！！ 否则后续读取数据出错
         char[][] maps=new char[m][n];
         for(int i=0;i<m;i++){
             String str=in.nextLine();
@@ -69,10 +70,12 @@ public class Main {
     }
 
     private static void dfs(int i, int j, char[][] maps) {
+        //定义数组dir表示草地扩张方向后的坐标变化
         int[][] dir={{0,1},{0,-1},{-1,0},{1,0}};
         for(int u=0;u<4;u++){
             int nx=i+dir[u][0];
             int ny=j+dir[u][1];
+            //变化后的坐标不越界并且没有被访问过，进行具体操作
             if(nx>=0&&nx< maps.length&&ny>=0&&ny<maps[0].length&&vis[nx][ny]==0){
                 if(maps[nx][ny]=='.'){
                     vis[nx][ny]=1;
