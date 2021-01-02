@@ -28,7 +28,7 @@ public class Solution {
      * @param loc  当前位置
      */
     public static void f(int k, int loc) {
-        if (loc == m + 1) {
+        if (loc == m+1 ) {
             ans++;
             return;
         }
